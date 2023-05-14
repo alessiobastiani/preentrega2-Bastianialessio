@@ -1,0 +1,52 @@
+.title {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.navbar-expand-lg {
+  background-color: #483d8b;
+}
+
+.contenedor-targetas {
+  display: flex;
+  flex-wrap: wrap;
+  width: 75%;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding-top: 25px;
+  margin-bottom: 25px;
+}
+.contenedor-targetas .card {
+  margin: 15px;
+}
+.contenedor-targetas .card .card-body .btn {
+  background-color: #483d8b;
+  border: none;
+}
+
+.sec-footer {
+  background-color: #483d8b;
+  height: 270px;
+}
+.sec-footer .redes-footer {
+  font-size: 25px;
+  gap: 20px;
+}
+.sec-footer .redes-footer a {
+  text-decoration: none;
+  color: black;
+}
+.sec-footer .logo-footer {
+  margin-top: 15px;
+}
+.sec-footer .logo-footer img {
+  width: 250px;
+  height: 150px;
+}
+.sec-footer .derechos {
+  font-weight: bold;
+  padding-top: 15px;
+}
+
+/*# sourceMappingURL=styles.css.map */

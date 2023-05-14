@@ -1,0 +1,53 @@
+
+.title{
+    margin-top: 25px;
+    text-align: center;
+}
+
+    .navbar-expand-lg{
+        background-color: #483d8b;
+    }
+
+.contenedor-targetas{
+    display: flex;
+    flex-wrap: wrap;
+    width: 75%;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding-top: 25px;
+    margin-bottom: 25px;
+    .card{
+        margin: 15px;
+        .card-body{
+            .btn{
+                background-color: #483d8b;
+                border: none;
+            }
+        }
+    }
+}
+
+    .sec-footer{
+        background-color: #483d8b;
+        height: 270px;
+        .redes-footer{
+            font-size: 25px;
+            gap: 20px;
+            a{
+                text-decoration: none;
+                color: black;
+            }
+        }
+        .logo-footer {
+            margin-top: 15px;
+            img{
+                width: 250px;
+                height: 150px;
+            }
+        }
+        .derechos{
+            font-weight: bold;
+            padding-top: 15px;
+        }
+    }
