@@ -1,42 +1,63 @@
 
-let nombre = prompt( " ingrese su nombre ")
-let apellido = prompt( " ingrese su apellido ")
-alert( "Holaaa " + nombre)
-let PreciosM = " Los precios de las motos son:  \nMoto 1: $100.000 \nMoto 2: $200.000 \nMoto 3: $300.000"
-alert(PreciosM)
-let motos = parseInt(prompt("¿ Quiere comprar la moto, 1 ,2 o 3? "))
+//Pedir al usuario que ingrese su nombre y apellido
+  let nombreUsuario = prompt("Por favor ingrese su nombre")
+  let apellidoUsuario = prompt("Ahora ingrese su apellido")
+  alert(" Hola " + nombreUsuario + " " + apellidoUsuario + " aqui veras las mejores motos! ")
 
-while((motos < 1 || motos > 3)){
-    motos = parseInt(prompt("¿ Quiere comprar la moto, 1 ,2 o 3? "))
-}
-
-console.log("nombre: " + nombre)
-console.log("apellido: " + apellido)
-console.log("moto numero: " + motos)
-
-const IVA = 0.21
-let precioMoto1 = 100000
-let precioMoto2 = 200000
-let precioMoto3 = 300000
-
-const calculoIva = ( precioMoto1, precioMoto2, precioMoto3, IVA) => {
-    switch (motos) {
-        case 1:
-            let resultado = (precioMoto1 * IVA) + precioMoto1
-            return resultado
-        case 2:
-            let resultado2 = (precioMoto2 * IVA ) + precioMoto2
-            return resultado2
-        case 3:
-        let resultado3 = (precioMoto3 * IVA) + precioMoto3
-        return resultado3
+// Definir un objeto
+function MotoAgua(nombre, marca, potencia, precio) {
+    this.nombre = nombre;
+    this.marca = marca;
+    this.potencia = potencia;
+    this.precio = precio;
+  }
+  
+  // Crear un array
+  var motosDeAgua = [];
+  
+  // Agrego algunas motos de agua al array
+  motosDeAgua.push(new MotoAgua("Cruiser", "Yamaha", 1812, "$" + 500000));
+  motosDeAgua.push(new MotoAgua("Limited", "Yamaha", 1150, "$" + 300000));
+  motosDeAgua.push(new MotoAgua("Premium", "Kawasaki", 1900, "$" + 600000));
+  
+  // Función para buscar una moto de agua por nombre
+  function buscarMoto(nombre) {
+    for (var i = 0; i < motosDeAgua.length; i++) {
+      if (motosDeAgua[i].nombre === nombre) {
+        return motosDeAgua[i];
+      }
     }
-}
-
-let PRECIO =  calculoIva(precioMoto1, precioMoto2, precioMoto3, IVA)
-
-alert( " El precio final de su producto es de $ " + PRECIO)
-alert( " Felicitaciones " + nombre + " te llevas la mejor moto!!!")
-
-console.log ( " El total a pagar es: $ " + PRECIO )
-
+    return null;
+  }
+  
+  // Función para filtrar las por marca
+  function filtrarMotosPorMarca(marca) {
+    return motosDeAgua.filter(function(moto) {
+      return moto.marca === marca;
+    });
+  }
+  
+  // Pedir al usuario que ingrese el nombre de una moto de agua
+  var nombreMoto = prompt("Ingrese el nombre de la moto de agua:");
+  
+  // Buscar la moto por nombre
+  var motoEncontrada = buscarMoto(nombreMoto);
+  
+  if (motoEncontrada) {
+    console.log("Moto de agua encontrada: ", motoEncontrada);
+  } else {
+    console.log("No se encontró ninguna moto de agua con ese nombre.");
+  }
+  
+  // Pedir al usuario que ingrese una marca de moto
+  var marcaMoto = prompt("Ingrese la marca de las motos de agua que desea filtrar:");
+  
+  // Filtrar las motos de agua por marca
+  var motosFiltradas = filtrarMotosPorMarca(marcaMoto);
+  
+  if (motosFiltradas.length > 0) {
+    console.log("Motos de agua encontradas con la marca ", marcaMoto, ": ", motosFiltradas);
+  } else {
+    console.log("No se encontraron motos de agua con esa marca.");
+  }
+  
