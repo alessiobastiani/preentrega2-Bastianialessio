@@ -60,4 +60,27 @@ function MotoAgua(nombre, marca, potencia, precio) {
   } else {
     console.log("No se encontraron motos de agua con esa marca.");
   }
+
+  alert("En caso de llevar una moto les dejamos los precios con iva")
   
+// Función para sumar el IVA al precio de una moto de agua
+function sumarIVA(moto) {
+  var precioSinIVA = parseInt(moto.precio.slice(1)); 
+  var iva = precioSinIVA * 0.21; 
+  var precioConIVA = precioSinIVA + iva; 
+  moto.precio = "$" + precioConIVA.toFixed(2); 
+}
+
+// Aplicar el IVA a todas las motos de agua
+for (var i = 0; i < motosDeAgua.length; i++) {
+  sumarIVA(motosDeAgua[i]);
+}
+
+// Imprimir las motos de agua con los precios actualizados
+for (var i = 0; i < motosDeAgua.length; i++) {
+  console.log("Moto:", motosDeAgua[i].nombre);
+  console.log("Precio:", motosDeAgua[i].precio);
+  console.log("---------------------------");
+}
+
+
